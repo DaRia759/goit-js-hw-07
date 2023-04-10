@@ -20,7 +20,8 @@ const markup =
     ).join('');
     
 
-galleryContainer.innerHTML += markup;
+galleryContainer.insertAdjacentHTML("beforeend", markup);
+
 
 const lightbox = new SimpleLightbox('.gallery a', { 
     captionsData: "alt",

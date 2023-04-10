@@ -20,15 +20,18 @@ const markup =
         </a>
     </li>`
     ).join('');
-    
 
-galleryContainer.innerHTML += markup;
 
+galleryContainer.insertAdjacentHTML("beforeend", markup);
 
 galleryContainer.addEventListener('click', openModalWindow);
 
 function openModalWindow (event) {
     event.preventDefault();
+    
+    if (event.target.nodeName !== "IMG") {
+    return;
+  }
 
     const instance =
         basicLightbox.create
